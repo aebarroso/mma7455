@@ -66,3 +66,12 @@ int8_t readRegister(uint8_t reg){
     return 0;
   }
 }
+
+float getGForce(uint8_t reg){
+  int8_t val = readRegister(reg);
+  if (val){
+    return val / FACTOR;
+  } else {
+    return null;
+  }
+}

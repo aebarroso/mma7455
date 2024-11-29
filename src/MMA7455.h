@@ -1,15 +1,14 @@
 #ifndef MMA7455_H
 #define MMA7455_H
 
-#include <Arduino.h>
+#include <Wire.h>
 
 #define MMA7455_ADDR 0x1D
 
 // Sensitivity 2g: 0x05, 4g: 0x09, 8g: 0x01
 #define SENSIVITY 0x05
-
 // Z stationary | 2g = 64 | 4g = 32 | 8g = 16
-
+#define FACTOR 64.0
 #define MODE_CONTROL 0x16
 // Defenition of each axis memory slot
 #define X_OUT 0x06
@@ -28,5 +27,5 @@ struct CalibrationOffsets {
 void startMMA7455();
 CalibrationOffsets calibrateAccelerometer();
 int8_t readRegister(uint8_t reg);
-
+float getGFroce(uint8_t reg);
 #endif
