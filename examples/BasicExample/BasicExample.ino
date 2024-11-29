@@ -31,12 +31,11 @@ void loop() {
   float y = readRegister(Y_OUT);
   float z = readRegister(Z_OUT);
 
-  Serial.print("X:");
-  Serial.println(x / 64);
-  Serial.print("Y:");
-  Serial.println(y / 64);
-  Serial.print("Z:");
-  Serial.println(z / 64);
-
+  Serial.print("X:");Serial.println(x);
+  Serial.print("Y:");Serial.println(y);
+  Serial.print("Z:");Serial.println(z);
+  Serial.print("XG:");Serial.print(getGForce(X_OUT));
+  Serial.print("YG:");Serial.print(getGForce(y_OUT));
+  Serial.print("ZG:");Serial.print(getGForce(Z_OUT));
   delay(100);
 }
