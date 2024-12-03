@@ -2,9 +2,7 @@
 #include <ArduinoJson.h>
 #include <FS.h>
 #include <SPIFFS.h>
-
-
-#include "src/MMA7455.h"
+#include <MMA7455.h>
 
 
 CalibrationOffsets offsets;
@@ -35,7 +33,7 @@ void loop() {
   Serial.print("Y:");Serial.println(y);
   Serial.print("Z:");Serial.println(z);
   Serial.print("XG:");Serial.print(getGForce(X_OUT));
-  Serial.print("YG:");Serial.print(getGForce(y_OUT));
+  Serial.print("YG:");Serial.print(getGForce(Y_OUT));
   Serial.print("ZG:");Serial.print(getGForce(Z_OUT));
   delay(100);
 }
